@@ -2,455 +2,116 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Daguku E-Sport</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Daguku E-Sport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <style>
-    /* ================= RESET ================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background: #070a1a;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-
-    /* ================= NAVBAR ================= */
-    .navbar {
-      position: fixed;
-      top: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .nav-inner {
-      width: 90%;
-      max-width: 1200px;
-      height: 70px;
-      padding: 0 30px;
-      background: rgba(10, 12, 30, .92);
-      backdrop-filter: blur(12px);
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: 1px solid #2a2f55;
-      box-shadow: 0 0 30px rgba(139, 92, 246, .25);
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #8b5cf6;
-    }
-
-    .logo span {
-      color: cyan
-    }
-
-    /* LINKS */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      position: relative;
-    }
-
-    .nav-links li {
-      margin: 0 18px
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #bbb;
-      font-size: .95rem;
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px cyan;
-    }
-
-    /* GLOW */
-    .nav-glow {
-      position: absolute;
-      bottom: -10px;
-      height: 3px;
-      width: 0;
-      background: linear-gradient(90deg, cyan, #8b5cf6);
-      border-radius: 10px;
-      transition: .4s;
-    }
-
-    /* HAMBURGER */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      width: 26px;
-      height: 3px;
-      background: #fff;
-      margin: 4px 0;
-      border-radius: 10px;
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      min-height: 100vh;
-      padding-top: 120px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: radial-gradient(circle, #1a1f3c, #02030a);
-    }
-
-    .hero h1 {
-      font-size: 3.8rem;
-      color: #8b5cf6;
-      text-shadow: 0 0 25px #8b5cf6;
-    }
-
-    .hero p {
-      margin-top: 12px;
-      letter-spacing: 4px;
-      color: #aaa;
-    }
-
-    /* ================= HERO STATS ================= */
-    .stats {
-      margin-top: 60px;
-      margin-bottom: 50px;
-      padding: 0 20px;
-      /* ⬅️ INI KUNCI: space kiri kanan */
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 600px;
-      /* biar nggak kepanjangan */
-      width: 100%;
-    }
-
-
-    .stat-card {
-      background: rgba(15, 18, 40, .9);
-      border: 1px solid #2a2f55;
-      border-radius: 20px;
-      padding: 30px;
-      min-width: 220px;
-      text-align: center;
-      box-shadow: 0 0 25px rgba(0, 255, 255, .15);
-      transition: .4s;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 0 35px rgba(139, 92, 246, .5);
-    }
-
-    .stat-card .icon {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-
-    .stat-card .number {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #8b5cf6;
-      text-shadow: 0 0 15px #8b5cf6;
-    }
-
-    .stat-card span {
-      display: block;
-      margin-top: 6px;
-      color: #aaa;
-      letter-spacing: 1px;
-    }
-
-    /* ================= TEAMS ================= */
-    /* TEAM MARQUEE */
-    .team-marquee {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .team-track {
-      display: flex;
-      gap: 30px;
-      width: max-content;
-      animation: teamScroll 20s linear infinite;
-    }
-
-    /* PAUSE SAAT HOVER */
-    .team-marquee:hover .team-track {
-      animation-play-state: paused;
-    }
-
-    /* CARD */
-    .team-card {
-      min-width: 220px;
-      background: #11162a;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid #2a2f55;
-      text-align: center;
-      font-weight: 600;
-      transition: .4s;
-      box-shadow: 0 0 20px rgba(139, 92, 246, .2);
-    }
-
-    .team-card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 35px #8b5cf6;
-    }
-
-    /* ANIMASI */
-    @keyframes teamScroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    @media(max-width:768px) {
-      .team-card {
-        min-width: 180px;
-        padding: 25px;
-      }
-    }
-
-
-    /* ================= CERT ================= */
-    .cert {
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .cert-grid {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .cert-grid img {
-      width: 100%;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: .4s;
-    }
-
-    .cert-grid img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px cyan;
-    }
-
-    /* ================= MODAL ================= */
-    #modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, .85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-
-    #modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 15px;
-    }
-
-    /* ================= RESPONSIVE ================= */
-    @media(max-width:768px) {
-      .menu-toggle {
-        display: flex
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 85px;
-        right: 10%;
-        background: rgba(10, 12, 30, .95);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        width: 200px;
-        border-radius: 20px;
-        padding: 20px;
-        display: none;
-        border: 1px solid #2a2f55;
-      }
-
-      .nav-links.active {
-        display: flex;
-        animation: slideDown .4s ease;
-      }
-
-      .nav-links li {
-        margin: 15px 0
-      }
-
-      .hero h1 {
-        font-size: 2.6rem
-      }
-
-      .stats {
-        gap: 15px;
-      }
-
-      .stat-card {
-        min-width: 150px;
-        padding: 20px;
-      }
-
-      .stat-card .number {
-        font-size: 2.2rem;
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0)
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <h4><b>Daguku E-Sport</b></h4>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <h4><b>Daguku E-Sport</b></h4>
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#teams">Teams</a></li>
-        <li><a href="#cert">Achievements</a></li>
-        <div class="nav-glow"></div>
-      </ul>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fa-solid fa-house-chimney"></i>
+Home</a></li>
+                <li><a href="#teams"><i class="fa-solid fa-people-group"></i>
+    Teams
+  </a> Teams</a></li>
+                <li><a href="#cert"><i class="fa-solid fa-trophy"></i> Achievements</a></li>
+                <div class="nav-glow"></div>
+            </ul>
 
-      <div class="menu-toggle">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <h2>Daguku E-Sport</h2>
-    <h1>Welcome To</h1>
-    <p>HALL OF CHAMPIONS</p>
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <h2>Daguku E-Sport</h2>
+        <h1>Welcome To</h1>
+        <p>HALL OF CHAMPIONS</p>
 
-    <div class="stats">
-      <div class="stat-card">
-        <div class="icon">🏆</div>
-        <div class="number" data-target="24">0</div>
-        <span>Total Penghargaan</span>
-      </div>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="icon">🏆</div>
+                <div class="number" data-target="24">0</div>
+                <span>Total Penghargaan</span>
+            </div>
 
-      <div class="stat-card">
-        <div class="icon">👥</div>
-        <div class="number" data-target="4">0</div>
-        <span>Total Team</span>
-      </div>
-    </div>
-  </section>
+            <div class="stat-card">
+                <div class="icon">👥</div>
+                <div class="number" data-target="4">0</div>
+                <span>Total Team</span>
+            </div>
+        </div>
 
-  <!-- TEAMS -->
-  <section id="teams" class="teams" style="margin-top: 50px; margin-bottom: 20px;">
-    <h2 style="display: flex; justify-content: center; align-items: center;">Our Teams</h2>
-    <p style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">LETS MEET OUR TEAMS</p>
-    <div class="team-marquee">
-      <div class="team-track">
-        <div class="team-card">Star Family</div>
-        <div class="team-card">Scorpio.id</div>
-        <div class="team-card">Team Fox</div>
-        <div class="team-card">Daguku.id</div>
+        <!-- SMOKE -->
+        <div class="smoke-container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
 
-        <!-- DUPLIKAT BIAR LOOP HALUS -->
-        <div class="team-card">Star Family</div>
-        <div class="team-card">Scorpio.id</div>
-        <div class="team-card">Team Fox</div>
-        <div class="team-card">Daguku.id</div>
-      </div>
-    </div>
-  </section>
+    <!-- TEAMS -->
+    <section id="teams" class="teams" style="margin-top: 20px; margin-bottom: 20px;">
+        <h2 style="display: flex; justify-content: center; align-items: center;">Our Teams</h2>
+        <p style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">LETS MEET OUR TEAMS
+        </p>
+        <div class="team-marquee">
+            <div class="team-track">
+                <div class="team-card">Star Family</div>
+                <div class="team-card">Scorpio.id</div>
+                <div class="team-card">Team Fox</div>
+                <div class="team-card">Daguku.id</div>
 
-  <!-- CERT -->
-  <section id="cert" class="cert">
-    <h2>Achievement Certificates</h2>
-  </section>
+                <!-- DUPLIKAT BIAR LOOP HALUS -->
+                <div class="team-card">Star Family</div>
+                <div class="team-card">Scorpio.id</div>
+                <div class="team-card">Team Fox</div>
+                <div class="team-card">Daguku.id</div>
+            </div>
+        </div>
+    </section>
 
-  <!-- MODAL -->
-  <div id="modal"><img id="modal-img"></div>
+    <!-- CERT -->
+    <section id="cert" class="cert">
+        <h2 style="display: flex; justify-content: center; align-items: center;">Our Teams</h2>
+        <p style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">VICTORY THROUGH
+            SKILL
+        </p>
 
-  <script>
-    /* NAVBAR */
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.onclick = () => navLinks.classList.toggle('active');
+        <div class="cert-list">
 
-    /* GLOW */
-    const items = document.querySelectorAll('.nav-links li');
-    const glow = document.querySelector('.nav-glow');
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        glow.style.width = item.offsetWidth + 'px';
-        glow.style.left = item.offsetLeft + 'px';
-      });
-    });
 
-    /* MODAL */
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    document.querySelectorAll('.cert-grid img').forEach(img => {
-      img.onclick = () => {
-        modal.style.display = 'flex';
-        modalImg.src = img.src;
-      }
-    });
-    modal.onclick = () => modal.style.display = 'none';
+            <div class="cert-card">
+                <div class="cert-icon">🏆</div>
+                <div class="cert-name">Event TAM Organizer</div>
+            </div>
 
-    /* COUNTER */
-    document.querySelectorAll('.number').forEach(counter => {
-      const target = +counter.dataset.target;
-      let count = 0;
-      const run = () => {
-        count += Math.ceil(target / 50);
-        if (count < target) {
-          counter.innerText = count;
-          requestAnimationFrame(run);
-        } else {
-          counter.innerText = target + '+';
-        }
-      };
-      run();
-    });
-  </script>
+            <div class="cert-card">
+                <div class="cert-icon">🏆</div>
+                <div class="cert-name">Event GUEH TOUR</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MODAL -->
+    <div id="modal"><img id="modal-img"></div>
+
+    <script src="main.js"></script>
 
 </body>
 
