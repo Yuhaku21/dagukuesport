@@ -213,6 +213,12 @@ body {
     background: radial-gradient(circle at top, #1b1f4a, #070a1a);
 }
 
+.cert p {
+    margin-top: 12px;
+    letter-spacing: 4px;
+    color: #aaa;
+}
+
 .cert-title {
     text-align: center;
     font-size: 32px;
