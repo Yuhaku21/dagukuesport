@@ -1,42 +1,50 @@
 
-        /* NAVBAR */
-        const toggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        toggle.onclick = () => navLinks.classList.toggle('active');
-
-        /* GLOW */
-        const items = document.querySelectorAll('.nav-links li');
-        const glow = document.querySelector('.nav-glow');
-        items.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                glow.style.width = item.offsetWidth + 'px';
-                glow.style.left = item.offsetLeft + 'px';
-            });
+        // Custom cursor
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX; my = e.clientY;
+            cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
         });
+        function animRing() {
+            rx += (mx - rx) * 0.12;
+            ry += (my - ry) * 0.12;
+            ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+            requestAnimationFrame(animRing);
+        }
+        animRing();
 
-        /* MODAL */
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-        document.querySelectorAll('.cert-grid img').forEach(img => {
-            img.onclick = () => {
-                modal.style.display = 'flex';
-                modalImg.src = img.src;
-            }
-        });
-        modal.onclick = () => modal.style.display = 'none';
-
-        /* COUNTER */
-        document.querySelectorAll('.number').forEach(counter => {
-            const target = +counter.dataset.target;
-            let count = 0;
-            const run = () => {
-                count += Math.ceil(target / 50);
-                if (count < target) {
-                    counter.innerText = count;
-                    requestAnimationFrame(run);
-                } else {
-                    counter.innerText = target + '+';
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 80);
                 }
-            };
-            run();
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Team filter
+        function filterTeam(div) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.member-card').forEach(card => {
+                if (div === 'all' || card.dataset.div === div) {
+                    card.style.display = '';
+                    card.style.animation = 'fadeUp 0.4s ease both';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+
+        // Stagger achievement cards
+        document.querySelectorAll('.achievement-card').forEach((card, i) => {
+            card.style.transitionDelay = (i * 0.06) + 's';
         });
+
+
+   

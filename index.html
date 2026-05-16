@@ -3,128 +3,463 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Daguku E-Sport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAGUKU ESPORT — Elite Gaming Organization</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-inner">
-            <h4>Daguku E-Sport</h4>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-            <ul class="nav-links">
-                <li>
-                    <a href="#home">
-                        <i class="fa-solid fa-house-chimney"></i> Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#teams">
-                        <i class="fa-solid fa-people-group"></i> Teams
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#cert">
-                        <i class="fa-solid fa-trophy"></i> Achievements
-                    </a>
-                </li>
-
-                <div class="nav-glow"></div>
-            </ul>
-
-            <div class="menu-toggle" id="menuToggle">
-                <span></span><span></span><span></span>
-            </div>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">Daguku<span> </span>E - Sport</div>
+        <div class="nav-links">
+            <a href="#achievements">Prestasi</a>
+            <a href="#our-team">Our Team</a>
+            <a href="#team">Roster</a>
+            <a href="#divisions">Divisi</a>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section id="home" class="hero">
-        <h2>Daguku E-Sport</h2>
-        <h1>Welcome To</h1>
-        <p>HALL OF CHAMPIONS</p>
-
-        <div class="stats">
-            <div class="stat-card">
-                <div class="icon">🏆</div>
-                <div class="number" data-target="24">0</div>
-                <span>Total Penghargaan</span>
-            </div>
-
-            <div class="stat-card">
-                <div class="icon">👥</div>
-                <div class="number" data-target="4">0</div>
-                <span>Total Team</span>
-            </div>
-        </div>
-
-        <!-- SMOKE -->
-        <div class="smoke-container">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </section>
-
-    <!-- TEAMS -->
-    <section id="teams" class="teams" style="margin-top: 20px; margin-bottom: 20px;">
-        <h2 style="display: flex; justify-content: center; align-items: center;">Our Teams</h2>
-        <p style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">LETS MEET OUR TEAMS
-        </p>
-        <div class="team-marquee">
-            <div class="team-track">
-                <div class="team-card">Star Family</div>
-                <div class="team-card">Scorpio.id</div>
-                <div class="team-card">Team Fox</div>
-                <div class="team-card">Daguku.id</div>
-
-                <!-- DUPLIKAT BIAR LOOP HALUS -->
-                <div class="team-card">Star Family</div>
-                <div class="team-card">Scorpio.id</div>
-                <div class="team-card">Team Fox</div>
-                <div class="team-card">Daguku.id</div>
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="scanlines"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">Team By Daguku</div>
+            <h1 class="hero-title">
+                <span class="line1">Welcome To</span>
+                <span class="line2">HALL OF CHAMPIONS</span>
+            </h1>
+            <p class="hero-sub">PLAY HARD. WIN BIGGER. DOMINATE.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">24+</div>
+                    <div class="hero-stat-label">PRESTASI</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">6</div>
+                    <div class="hero-stat-label">DIVISI</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">40+</div>
+                    <div class="hero-stat-label">ATLET</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">5+</div>
+                    <div class="hero-stat-label">TAHUN</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CERT -->
-    <section id="cert" class="cert">
-        <h2 style="display: flex; justify-content: center; align-items: center;">Achievement</h2>
-        <p style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">VICTORY THROUGH
-            SKILL
-        </p>
+    <div class="deco-line"></div>
 
-        <div class="cert-list">
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+        <div class="section-header scroll-reveal">
+            <div class="section-tag">HALL OF FAME</div>
+            <h2 class="section-title">PRESTASI<br>TIM</h2>
+            <div class="section-divider"></div>
+        </div>
 
+        <div class="achievements-grid">
 
-            <div class="cert-card">
-                <div class="cert-icon">🏆</div>
-                <div class="cert-name">Event TAM Organizer</div>
+            <div class="achievement-card scroll-reveal">
+                <div class="achievement-icon">🥉</div>
+                <div class="achievement-rank rank-1">🥉 JUARA 3</div>
+                <div class="achievement-game">Mobile Legends</div>
+                <div class="achievement-event">Event TAM Organizer</div>
+                <div class="achievement-team">Daguku Fox</div>
+                <div class="achievement-year">2025</div>
             </div>
 
-            <div class="cert-card">
-                <div class="cert-icon">🏆</div>
-                <div class="cert-name">Event GUEH TOUR</div>
+            <div class="achievement-card scroll-reveal">
+                <div class="achievement-icon">🥈</div>
+                <div class="achievement-rank rank-2">🥈 JUARA 2</div>
+                <div class="achievement-game">Mobile Legends</div>
+                <div class="achievement-event">Event GUEH Tur</div>
+                <div class="achievement-team">Daguku Star Family</div>
+                <div class="achievement-year">2026</div>
+            </div>
+
+           
+
+        </div>
+         <!--Button-->
+            <a href="https://www.instagram.com/daguku.id/" class="gamer-btn">
+                <div class="particles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                Lihat Semua Prestasi
+            </a>
+    </section>
+
+    <div class="deco-line"></div>
+
+    <!-- OUR TEAM MARQUEE -->
+    <section id="our-team">
+        <div class="section-header scroll-reveal">
+            <div class="section-tag">THE SQUAD</div>
+            <h2 class="section-title">OUR<br>TEAMS</h2>
+            <p class="section-sub">LETS MEET OUR TEAMS</p>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="marquee-wrapper">
+
+            <!-- ROW 1 — ke kiri -->
+            <div class="marquee-band band-1">
+                <div class="band-track track-left">
+                    <div class="team-card"><span class="tc-dot"></span><span class="tc-name">Scorpio.id</span></div>
+                    <div class="team-card"><span class="tc-dot accent2"></span><span class="tc-name">Team Fox</span>
+                    </div>
+                    <div class="team-card tc-featured"><span class="tc-dot gold"></span><span
+                            class="tc-name">Daguku.id</span></div>
+                    <div class="team-card"><span class="tc-dot green"></span><span class="tc-name">Star Family</span>
+                    </div>
+                    <div class="team-card"><span class="tc-dot purple"></span><span class="tc-name">Iron Wolves</span>
+                    </div>
+                    <div class="team-card"><span class="tc-dot accent2"></span><span class="tc-name">Neon Blade</span>
+                    </div>
+                    <div class="team-card tc-featured"><span class="tc-dot"></span><span class="tc-name">Vortex
+                            Squad</span></div>
+                    <div class="team-card"><span class="tc-dot gold"></span><span class="tc-name">Dark Matter</span>
+                    </div>
+                    <!-- duplicate -->
+                    <div class="team-card"><span class="tc-dot"></span><span class="tc-name">Scorpio.id</span></div>
+                    <div class="team-card"><span class="tc-dot accent2"></span><span class="tc-name">Team Fox</span>
+                    </div>
+                    <div class="team-card tc-featured"><span class="tc-dot gold"></span><span
+                            class="tc-name">Daguku.id</span></div>
+                    <div class="team-card"><span class="tc-dot green"></span><span class="tc-name">Star Family</span>
+                    </div>
+                    <div class="team-card"><span class="tc-dot purple"></span><span class="tc-name">Iron Wolves</span>
+                    </div>
+                    <div class="team-card"><span class="tc-dot accent2"></span><span class="tc-name">Neon Blade</span>
+                    </div>
+                    <div class="team-card tc-featured"><span class="tc-dot"></span><span class="tc-name">Vortex
+                            Squad</span></div>
+                    <div class="team-card"><span class="tc-dot gold"></span><span class="tc-name">Dark Matter</span>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
+    <div class="deco-line"></div>
 
-    <!-- MODAL -->
-    <div id="modal"><img id="modal-img"></div>
+    <!-- TEAM MEMBERS -->
+    <section id="team">
+        <div class="section-header scroll-reveal">
+            <div class="section-tag">ROSTER</div>
+            <h2 class="section-title">ANGGOTA<br>TIM</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="team-filter scroll-reveal">
+            <button class="filter-btn active" onclick="filterTeam('all')">SEMUA</button>
+            <button class="filter-btn" onclick="filterTeam('MLBB')">MOBILE LEGENDS</button>
+            <button class="filter-btn" onclick="filterTeam('PUBG')">PUBG MOBILE</button>
+            <button class="filter-btn" onclick="filterTeam('FF')">FREE FIRE</button>
+            <button class="filter-btn" onclick="filterTeam('VAL')">VALORANT</button>
+        </div>
+
+        <div class="members-grid" id="membersGrid">
+
+            <!-- MLBB Alpha -->
+            <div class="member-card" data-div="MLBB">
+                <div class="member-div">MLBB</div>
+                <div class="member-avatar av-1">RZ</div>
+                <div class="member-ign">RYZEN</div>
+                <div class="member-real">Rizal Maulana</div>
+                <span class="member-role role-captain">KAPTEN</span>
+            </div>
+            <div class="member-card" data-div="MLBB">
+                <div class="member-div">MLBB</div>
+                <div class="member-avatar av-2">FX</div>
+                <div class="member-ign">PHOENIXX</div>
+                <div class="member-real">Fakhri Aziz</div>
+                <span class="member-role role-player">HYPER</span>
+            </div>
+            <div class="member-card" data-div="MLBB">
+                <div class="member-div">MLBB</div>
+                <div class="member-avatar av-3">NX</div>
+                <div class="member-ign">NEXUS</div>
+                <div class="member-real">Naufal Hidayat</div>
+                <span class="member-role role-player">EXP LANE</span>
+            </div>
+            <div class="member-card" data-div="MLBB">
+                <div class="member-div">MLBB</div>
+                <div class="member-avatar av-4">ZK</div>
+                <div class="member-ign">ZEKO</div>
+                <div class="member-real">Zaki Ramadhan</div>
+                <span class="member-role role-support">ROAMER</span>
+            </div>
+            <div class="member-card" data-div="MLBB">
+                <div class="member-div">MLBB</div>
+                <div class="member-avatar av-1">DV</div>
+                <div class="member-ign">DEVINE</div>
+                <div class="member-real">Diva Pratama</div>
+                <span class="member-role role-player">GOLD LANE</span>
+            </div>
+            <div class="member-card" data-div="MLBB">
+                <div class="member-div">MLBB</div>
+                <div class="member-avatar av-2">ST</div>
+                <div class="member-ign">STORM</div>
+                <div class="member-real">Satria Budi</div>
+                <span class="member-role role-player">MID LANE</span>
+            </div>
+
+            <!-- PUBG -->
+            <div class="member-card" data-div="PUBG">
+                <div class="member-div">PUBG</div>
+                <div class="member-avatar av-3">GH</div>
+                <div class="member-ign">GHOST</div>
+                <div class="member-real">Galih Hendra</div>
+                <span class="member-role role-captain">KAPTEN</span>
+            </div>
+            <div class="member-card" data-div="PUBG">
+                <div class="member-div">PUBG</div>
+                <div class="member-avatar av-4">BL</div>
+                <div class="member-ign">BLAZE</div>
+                <div class="member-real">Bagas Luthfi</div>
+                <span class="member-role role-player">IGL</span>
+            </div>
+            <div class="member-card" data-div="PUBG">
+                <div class="member-div">PUBG</div>
+                <div class="member-avatar av-1">SN</div>
+                <div class="member-ign">SNIPER</div>
+                <div class="member-real">Sandi Nugraha</div>
+                <span class="member-role role-player">FRAGGER</span>
+            </div>
+            <div class="member-card" data-div="PUBG">
+                <div class="member-div">PUBG</div>
+                <div class="member-avatar av-2">WV</div>
+                <div class="member-ign">WAVE</div>
+                <div class="member-real">Wahyu Vian</div>
+                <span class="member-role role-support">SUPPORT</span>
+            </div>
+
+            <!-- FREE FIRE -->
+            <div class="member-card" data-div="FF">
+                <div class="member-div">FF</div>
+                <div class="member-avatar av-2">KR</div>
+                <div class="member-ign">KIRA</div>
+                <div class="member-real">Kevin Rustam</div>
+                <span class="member-role role-captain">KAPTEN</span>
+            </div>
+            <div class="member-card" data-div="FF">
+                <div class="member-div">FF</div>
+                <div class="member-avatar av-3">DX</div>
+                <div class="member-ign">DXTR</div>
+                <div class="member-real">Dextron Al</div>
+                <span class="member-role role-player">RUSHER</span>
+            </div>
+            <div class="member-card" data-div="FF">
+                <div class="member-div">FF</div>
+                <div class="member-avatar av-4">LN</div>
+                <div class="member-ign">LUNAR</div>
+                <div class="member-real">Luna Pertiwi</div>
+                <span class="member-role role-player">SNIPER</span>
+            </div>
+            <div class="member-card" data-div="FF">
+                <div class="member-div">FF</div>
+                <div class="member-avatar av-1">FK</div>
+                <div class="member-ign">FALCON</div>
+                <div class="member-real">Farid Kurniawan</div>
+                <span class="member-role role-support">SUPPORT</span>
+            </div>
+
+            <!-- VALORANT -->
+            <div class="member-card" data-div="VAL">
+                <div class="member-div">VAL</div>
+                <div class="member-avatar av-4">VX</div>
+                <div class="member-ign">VIPERX</div>
+                <div class="member-real">Vino Xander</div>
+                <span class="member-role role-captain">KAPTEN</span>
+            </div>
+            <div class="member-card" data-div="VAL">
+                <div class="member-div">VAL</div>
+                <div class="member-avatar av-1">EX</div>
+                <div class="member-ign">ECLIPSE</div>
+                <div class="member-real">Ezra Christian</div>
+                <span class="member-role role-player">DUELIST</span>
+            </div>
+            <div class="member-card" data-div="VAL">
+                <div class="member-div">VAL</div>
+                <div class="member-avatar av-2">ZR</div>
+                <div class="member-ign">ZERO</div>
+                <div class="member-real">Zaidan Rifki</div>
+                <span class="member-role role-player">SENTINEL</span>
+            </div>
+            <div class="member-card" data-div="VAL">
+                <div class="member-div">VAL</div>
+                <div class="member-avatar av-3">AM</div>
+                <div class="member-ign">AMOS</div>
+                <div class="member-real">Amran Sitorus</div>
+                <span class="member-role role-support">CONTROLLER</span>
+            </div>
+            <div class="member-card" data-div="VAL">
+                <div class="member-div">VAL</div>
+                <div class="member-avatar av-4">CR</div>
+                <div class="member-ign">CROWN</div>
+                <div class="member-real">Candra Reza</div>
+                <span class="member-role role-player">INITIATOR</span>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="deco-line"></div>
+
+    <!-- DIVISIONS -->
+    <section id="divisions">
+        <div class="section-header scroll-reveal">
+            <div class="section-tag">STRUKTUR ORGANISASI</div>
+            <h2 class="section-title">DIVISI<br>DAGUKU</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="divisions-grid">
+
+            <div class="division-card scroll-reveal" style="--div-color:#00f5ff;">
+                <div class="division-number">01</div>
+                <div class="division-icon-wrap">⚔️</div>
+                <div class="division-name">MOBILE LEGENDS</div>
+                <div class="division-game">DAGUKU ALPHA</div>
+                <div class="division-desc">Divisi unggulan Daguku di game MOBA terpopuler. Tim ini telah meraih berbagai
+                    prestasi tingkat regional NTB.</div>
+                <div class="division-meta">
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">6</div>
+                        <div class="division-meta-label">PEMAIN</div>
+                    </div>
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">8+</div>
+                        <div class="division-meta-label">GELAR</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card scroll-reveal" style="--div-color:#ff8c00;">
+                <div class="division-number">02</div>
+                <div class="division-icon-wrap">🎯</div>
+                <div class="division-name">PUBG MOBILE</div>
+                <div class="division-game">DAGUKU BRAVO</div>
+                <div class="division-desc">Spesialis battle royale dengan taktik superior dan koordinasi tim yang solid
+                    di setiap kompetisi.</div>
+                <div class="division-meta">
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">4</div>
+                        <div class="division-meta-label">PEMAIN</div>
+                    </div>
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">5+</div>
+                        <div class="division-meta-label">GELAR</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card scroll-reveal" style="--div-color:#ff2d55;">
+                <div class="division-number">03</div>
+                <div class="division-icon-wrap">🔥</div>
+                <div class="division-name">FREE FIRE</div>
+                <div class="division-game">DAGUKU CHARLIE</div>
+                <div class="division-desc">Divisi yang konsisten tampil di berbagai turnamen Free Fire tingkat kota
+                    hingga provinsi NTB.</div>
+                <div class="division-meta">
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">4</div>
+                        <div class="division-meta-label">PEMAIN</div>
+                    </div>
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">6+</div>
+                        <div class="division-meta-label">GELAR</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card scroll-reveal" style="--div-color:#a78bfa;">
+                <div class="division-number">04</div>
+                <div class="division-icon-wrap">🎮</div>
+                <div class="division-name">VALORANT</div>
+                <div class="division-game">DAGUKU VIPER</div>
+                <div class="division-desc">Divisi terbaru Daguku yang fokus pada tactical shooter, berambisi tembus
+                    nasional di tahun mendatang.</div>
+                <div class="division-meta">
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">5</div>
+                        <div class="division-meta-label">PEMAIN</div>
+                    </div>
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">3+</div>
+                        <div class="division-meta-label">GELAR</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card scroll-reveal" style="--div-color:#4ade80;">
+                <div class="division-number">05</div>
+                <div class="division-icon-wrap">🏟️</div>
+                <div class="division-name">MOBILE LEGENDS</div>
+                <div class="division-game">DAGUKU DELTA</div>
+                <div class="division-desc">Tim sekunder MLBB yang menjadi wadah pengembangan pemain muda berbakat Daguku
+                    untuk kompetisi.</div>
+                <div class="division-meta">
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">6</div>
+                        <div class="division-meta-label">PEMAIN</div>
+                    </div>
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">2+</div>
+                        <div class="division-meta-label">GELAR</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-card scroll-reveal" style="--div-color:#fbbf24;">
+                <div class="division-number">06</div>
+                <div class="division-icon-wrap">🌟</div>
+                <div class="division-name">AKADEMI</div>
+                <div class="division-game">DAGUKU ACADEMY</div>
+                <div class="division-desc">Program pembibitan atlet esport muda Daguku. Pelatihan rutin dan tryout
+                    terbuka setiap bulannya.</div>
+                <div class="division-meta">
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">15+</div>
+                        <div class="division-meta-label">CADET</div>
+                    </div>
+                    <div class="division-meta-item">
+                        <div class="division-meta-num">∞</div>
+                        <div class="division-meta-label">POTENSI</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">DAGUKU ESPORT</div>
+        <div class="footer-tagline">PLAY HARD. WIN BIGGER. DOMINATE.</div>
+        <div class="footer-line"></div>
+        <div class="footer-copy">© 2025 DAGUKU ESPORT — MATARAM, NUSA TENGGARA BARAT</div>
+    </footer>
 
     <script src="main.js"></script>
-
 </body>
 
 </html>
